@@ -158,6 +158,9 @@ def signup(request):
     return render(request, 'registration/signup.html', {'form': form, 'title': 'Create Account'})
 def mobile_development(request):
     return render(request, 'core/mobile-development.html')
+
+def services_pricing(request):
+    return render(request, 'core/services-pricing.html')
 def custom_software_development(request):
     return render(request, 'core/custom-software-development.html')
 def web_development(request):

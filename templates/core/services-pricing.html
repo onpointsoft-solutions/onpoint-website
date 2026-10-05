@@ -1,0 +1,858 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Services & Pricing — OnpointSoft Solutions{% endblock %}
+
+{% block meta_description %}Transparent technology packages for Kenyan businesses. Websites from KES 15,000, custom software from KES 50,000, mobile apps, automation and IT consultancy. Final cost depends on your scope.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pricing.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="pricing-page" data-bs-theme="light">
+
+<!-- ===================== HERO ===================== -->
+<section class="pp-hero pp-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1>Simple, transparent technology solutions</h1>
+        <p class="pp-hero-lead">Choose a starting package or talk to us about a solution built specifically for your needs.</p>
+        <p class="pp-hero-note">
+          All prices are starting prices. Final pricing depends on scope, features, integrations,
+          content, hosting requirements and complexity.
+        </p>
+        <div class="pp-hero-actions">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--light">
+            <i class="bi bi-whatsapp text-success"></i> WhatsApp us
+          </a>
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--ghost">
+            <i class="bi bi-calendar-check"></i> Book a consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST STRIP ===================== -->
+<section class="pp-trust pp-section--tight">
+  <div class="container">
+    <div class="pp-trust-inner">
+      <p class="pp-trust-copy">
+        <strong>Built around your needs. Priced according to your scope.</strong>
+        <span>No one-size-fits-all software. No unnecessary features. Just practical technology designed around your goals.</span>
+      </p>
+      <ul class="pp-trust-list">
+        <li><i class="bi bi-check-circle-fill"></i>Kenyan SME focused</li>
+        <li><i class="bi bi-check-circle-fill"></i>Transparent pricing</li>
+        <li><i class="bi bi-check-circle-fill"></i>Post-launch support</li>
+        <li><i class="bi bi-check-circle-fill"></i>M-Pesa integrations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STICKY TABS ===================== -->
+<div class="pp-tabs-bar" id="pricingTabs">
+  <div class="container">
+    <div class="pp-tabs" role="tablist" aria-label="Service categories">
+      <button class="pp-tab is-active" id="tab-websites" role="tab" data-category="websites"
+              aria-selected="true" aria-controls="cat-websites">
+        <i class="bi bi-globe"></i>Websites
+      </button>
+      <button class="pp-tab" id="tab-software" role="tab" data-category="software"
+              aria-selected="false" aria-controls="cat-software" tabindex="-1">
+        <i class="bi bi-cpu"></i>Software
+      </button>
+      <button class="pp-tab" id="tab-mobile" role="tab" data-category="mobile"
+              aria-selected="false" aria-controls="cat-mobile" tabindex="-1">
+        <i class="bi bi-phone"></i>Mobile apps
+      </button>
+      <button class="pp-tab" id="tab-automation" role="tab" data-category="automation"
+              aria-selected="false" aria-controls="cat-automation" tabindex="-1">
+        <i class="bi bi-lightning"></i>Automation
+      </button>
+      <button class="pp-tab" id="tab-consultancy" role="tab" data-category="consultancy"
+              aria-selected="false" aria-controls="cat-consultancy" tabindex="-1">
+        <i class="bi bi-lightbulb"></i>Consultancy
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="pp-panels">
+
+<!-- ===================== WEBSITES ===================== -->
+<section class="pp-section pp-bg-mist pp-category" id="cat-websites" role="tabpanel" aria-labelledby="tab-websites">
+  <div class="container">
+
+    <div class="pp-head">
+      <h2>Professional websites that work for your business</h2>
+      <p>Every package is built for a real business scenario. Pick the one that fits where you are now — you can always grow.</p>
+    </div>
+
+    <div class="pp-grid">
+
+      <!-- Landing Page -->
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-file-earmark-richtext"></i></div>
+        <h3 class="pp-name">Landing Page</h3>
+        <p class="pp-desc">Startups, campaigns, personal brands and businesses that need a focused online presence.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>15,000</span>
+          <span class="pp-price-note">Single-focus page</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>1 professionally designed page</li>
+          <li><i class="bi bi-check-circle-fill"></i>Responsive mobile design</li>
+          <li><i class="bi bi-check-circle-fill"></i>Up to 6–8 content sections</li>
+          <li><i class="bi bi-check-circle-fill"></i>WhatsApp integration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Call-to-action buttons</li>
+          <li><i class="bi bi-check-circle-fill"></i>Contact form</li>
+          <li><i class="bi bi-check-circle-fill"></i>Social media links</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic SEO setup</li>
+          <li><i class="bi bi-check-circle-fill"></i>SSL &amp; deployment</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic post-launch support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27m%20interested%20in%20the%20Landing%20Page%20package"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--outline">
+            <i class="bi bi-whatsapp"></i> Get started
+          </a>
+        </div>
+      </article>
+
+      <!-- Starter Business — featured -->
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">Popular</span>
+        <div class="pp-icon"><i class="bi bi-shop"></i></div>
+        <h3 class="pp-name">Starter Business</h3>
+        <p class="pp-desc">Small businesses that need a professional online presence to attract and convert customers.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>25,000</span>
+          <span class="pp-price-note">Up to 5 pages</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Up to 5 pages (Home, About, Services, Contact + 1)</li>
+          <li><i class="bi bi-check-circle-fill"></i>Custom responsive design</li>
+          <li><i class="bi bi-check-circle-fill"></i>WhatsApp integration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Google Maps</li>
+          <li><i class="bi bi-check-circle-fill"></i>Contact form</li>
+          <li><i class="bi bi-check-circle-fill"></i>Social media integration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic SEO</li>
+          <li><i class="bi bi-check-circle-fill"></i>SSL &amp; deployment</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic training</li>
+          <li><i class="bi bi-check-circle-fill"></i>30 days post-launch support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27m%20interested%20in%20the%20Starter%20Business%20website%20package"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--accent">
+            <i class="bi bi-whatsapp"></i> Choose Starter
+          </a>
+        </div>
+      </article>
+
+      <!-- Professional Business -->
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-building"></i></div>
+        <h3 class="pp-name">Professional Business</h3>
+        <p class="pp-desc">Growing businesses and organizations that need a stronger digital presence and more content.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>45,000</span>
+          <span class="pp-price-note">Up to 10 pages</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Up to 10 pages</li>
+          <li><i class="bi bi-check-circle-fill"></i>Custom UI/UX design</li>
+          <li><i class="bi bi-check-circle-fill"></i>Mobile-first design</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced contact forms</li>
+          <li><i class="bi bi-check-circle-fill"></i>WhatsApp &amp; Google Maps</li>
+          <li><i class="bi bi-check-circle-fill"></i>Google Analytics</li>
+          <li><i class="bi bi-check-circle-fill"></i>Blog / news section (where required)</li>
+          <li><i class="bi bi-check-circle-fill"></i>SEO optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i>Performance optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i>Admin / CMS (where applicable)</li>
+          <li><i class="bi bi-check-circle-fill"></i>60 days support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27m%20interested%20in%20the%20Professional%20Business%20website%20package"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--outline">
+            <i class="bi bi-whatsapp"></i> Choose Professional
+          </a>
+        </div>
+      </article>
+
+      <!-- Business Plus -->
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-briefcase"></i></div>
+        <h3 class="pp-name">Business Plus</h3>
+        <p class="pp-desc">Established businesses and organizations requiring advanced website functionality and integrations.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>70,000</span>
+          <span class="pp-price-note">Up to 15 pages</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Up to 15 pages</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced custom design</li>
+          <li><i class="bi bi-check-circle-fill"></i>CMS / admin functionality</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced forms &amp; lead capture</li>
+          <li><i class="bi bi-check-circle-fill"></i>Analytics setup</li>
+          <li><i class="bi bi-check-circle-fill"></i>SEO &amp; performance optimization</li>
+          <li><i class="bi bi-check-circle-fill"></i>Third-party integrations</li>
+          <li><i class="bi bi-check-circle-fill"></i>Business automation features (where applicable)</li>
+          <li><i class="bi bi-check-circle-fill"></i>Training</li>
+          <li><i class="bi bi-check-circle-fill"></i>90 days support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--outline">
+            <i class="bi bi-calendar-check"></i> Request consultation
+          </a>
+        </div>
+      </article>
+
+      <!-- E-Commerce -->
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-cart3"></i></div>
+        <h3 class="pp-name">E-Commerce</h3>
+        <p class="pp-desc">Businesses that want to sell products or services online with M-Pesa and payment integrations.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>80,000</span>
+          <span class="pp-price-note">Full online store</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Product catalogue &amp; shopping cart</li>
+          <li><i class="bi bi-check-circle-fill"></i>Checkout &amp; M-Pesa / payment integration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Order &amp; customer management</li>
+          <li><i class="bi bi-check-circle-fill"></i>Product management &amp; basic inventory</li>
+          <li><i class="bi bi-check-circle-fill"></i>Admin dashboard</li>
+          <li><i class="bi bi-check-circle-fill"></i>Email notifications</li>
+          <li><i class="bi bi-check-circle-fill"></i>Mobile responsive design</li>
+          <li><i class="bi bi-check-circle-fill"></i>Analytics</li>
+          <li><i class="bi bi-check-circle-fill"></i>Security configuration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Training &amp; post-launch support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20build%20an%20e-commerce%20store"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--outline">
+            <i class="bi bi-whatsapp"></i> Build my store
+          </a>
+        </div>
+        <p class="pp-card-note">
+          <i class="bi bi-info-circle me-1"></i>
+          Complex marketplaces, multi-vendor platforms and advanced integrations are quoted separately.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOFTWARE ===================== -->
+<section class="pp-section pp-bg-paper pp-category" id="cat-software" role="tabpanel" aria-labelledby="tab-software" hidden>
+  <div class="container">
+
+    <div class="pp-head">
+      <h2>Your business is unique. Your software should be too.</h2>
+      <p>We design and develop software around your actual business processes rather than forcing your business into a generic system.</p>
+    </div>
+
+    <div class="pp-grid">
+
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-hdd-stack"></i></div>
+        <h3 class="pp-name">Business System</h3>
+        <p class="pp-desc">Focused internal business systems for small teams with specific operational workflows.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>50,000</span>
+          <span class="pp-price-note">Single focused workflow</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>User authentication &amp; login</li>
+          <li><i class="bi bi-check-circle-fill"></i>Dashboard</li>
+          <li><i class="bi bi-check-circle-fill"></i>Data management</li>
+          <li><i class="bi bi-check-circle-fill"></i>CRUD workflows</li>
+          <li><i class="bi bi-check-circle-fill"></i>Reports</li>
+          <li><i class="bi bi-check-circle-fill"></i>User roles &amp; permissions</li>
+          <li><i class="bi bi-check-circle-fill"></i>Database</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic administration</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20Business%20System"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--outline">
+            <i class="bi bi-whatsapp"></i> Discuss your system
+          </a>
+        </div>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">Recommended</span>
+        <div class="pp-icon"><i class="bi bi-diagram-3"></i></div>
+        <h3 class="pp-name">Business Management Platform</h3>
+        <p class="pp-desc">Growing businesses requiring multiple interconnected workflows in one platform.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>100,000</span>
+          <span class="pp-price-note">Multi-workflow platform</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Advanced dashboard</li>
+          <li><i class="bi bi-check-circle-fill"></i>User roles &amp; permissions</li>
+          <li><i class="bi bi-check-circle-fill"></i>Inventory management</li>
+          <li><i class="bi bi-check-circle-fill"></i>Sales management</li>
+          <li><i class="bi bi-check-circle-fill"></i>Customer &amp; supplier management</li>
+          <li><i class="bi bi-check-circle-fill"></i>Reports &amp; analytics</li>
+          <li><i class="bi bi-check-circle-fill"></i>Notifications</li>
+          <li><i class="bi bi-check-circle-fill"></i>Database &amp; APIs</li>
+          <li><i class="bi bi-check-circle-fill"></i>Admin management</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--accent">
+            <i class="bi bi-calendar-check"></i> Discuss your project
+          </a>
+        </div>
+      </article>
+
+      <article class="pp-card pp-card--quote">
+        <div class="pp-icon"><i class="bi bi-stars"></i></div>
+        <h3 class="pp-name">Custom Enterprise Solution</h3>
+        <p class="pp-desc">Complex organisations requiring multi-branch systems, integrations and advanced workflows.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Pricing</span>
+          <span class="pp-price-main">Custom quote</span>
+          <span class="pp-price-note">Scoped to your requirements</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Multi-branch systems</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced workflows</li>
+          <li><i class="bi bi-check-circle-fill"></i>Mobile applications</li>
+          <li><i class="bi bi-check-circle-fill"></i>APIs &amp; payment integrations</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced reporting</li>
+          <li><i class="bi bi-check-circle-fill"></i>Cloud infrastructure</li>
+          <li><i class="bi bi-check-circle-fill"></i>Third-party integrations</li>
+          <li><i class="bi bi-check-circle-fill"></i>Advanced security</li>
+          <li><i class="bi bi-check-circle-fill"></i>Data migration</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--outline">
+            <i class="bi bi-envelope"></i> Request custom quote
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MOBILE ===================== -->
+<section class="pp-section pp-bg-mist pp-category" id="cat-mobile" role="tabpanel" aria-labelledby="tab-mobile" hidden>
+  <div class="container">
+
+    <div class="pp-head">
+      <h2>Mobile apps that reach your customers wherever they are</h2>
+      <p>From MVP prototypes to production-ready business apps and complex platforms — we build for Android and iOS.</p>
+    </div>
+
+    <div class="pp-grid">
+
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-rocket"></i></div>
+        <h3 class="pp-name">MVP Application</h3>
+        <p class="pp-desc">For startups testing a business idea — get to market fast with the core features that matter.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>80,000</span>
+          <span class="pp-price-note">Core features, fast to market</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Core application features</li>
+          <li><i class="bi bi-check-circle-fill"></i>User authentication</li>
+          <li><i class="bi bi-check-circle-fill"></i>Database</li>
+          <li><i class="bi bi-check-circle-fill"></i>Responsive UI</li>
+          <li><i class="bi bi-check-circle-fill"></i>Basic backend</li>
+          <li><i class="bi bi-check-circle-fill"></i>Android deployment</li>
+          <li><i class="bi bi-check-circle-fill"></i>Testing</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27m%20interested%20in%20building%20an%20MVP%20mobile%20app"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--outline">
+            <i class="bi bi-whatsapp"></i> Discuss your MVP
+          </a>
+        </div>
+      </article>
+
+      <article class="pp-card pp-card--featured">
+        <span class="pp-badge">Recommended</span>
+        <div class="pp-icon"><i class="bi bi-phone-fill"></i></div>
+        <h3 class="pp-name">Business Mobile App</h3>
+        <p class="pp-desc">For businesses requiring a production-ready application with full features and integrations.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>120,000</span>
+          <span class="pp-price-note">Production-ready, full features</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Authentication &amp; user profiles</li>
+          <li><i class="bi bi-check-circle-fill"></i>Database &amp; API integration</li>
+          <li><i class="bi bi-check-circle-fill"></i>Push notifications</li>
+          <li><i class="bi bi-check-circle-fill"></i>Admin functionality</li>
+          <li><i class="bi bi-check-circle-fill"></i>Analytics</li>
+          <li><i class="bi bi-check-circle-fill"></i>Payment integration (where required)</li>
+          <li><i class="bi bi-check-circle-fill"></i>Testing</li>
+          <li><i class="bi bi-check-circle-fill"></i>Deployment</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--accent">
+            <i class="bi bi-calendar-check"></i> Discuss your app
+          </a>
+        </div>
+      </article>
+
+      <article class="pp-card pp-card--quote">
+        <div class="pp-icon"><i class="bi bi-layers"></i></div>
+        <h3 class="pp-name">Advanced Mobile Platform</h3>
+        <p class="pp-desc">Marketplaces, delivery, fintech, education, booking and complex multi-user platforms.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Pricing</span>
+          <span class="pp-price-main">Custom quote</span>
+          <span class="pp-price-note">Scoped to your platform</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Marketplaces &amp; delivery platforms</li>
+          <li><i class="bi bi-check-circle-fill"></i>Fintech &amp; payment platforms</li>
+          <li><i class="bi bi-check-circle-fill"></i>Education platforms</li>
+          <li><i class="bi bi-check-circle-fill"></i>Booking &amp; scheduling platforms</li>
+          <li><i class="bi bi-check-circle-fill"></i>Complex multi-user applications</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--outline">
+            <i class="bi bi-envelope"></i> Discuss your platform
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AUTOMATION ===================== -->
+<section class="pp-section pp-bg-paper pp-category" id="cat-automation" role="tabpanel" aria-labelledby="tab-automation" hidden>
+  <div class="container">
+
+    <div class="pp-head">
+      <h2>Automate what slows your business down</h2>
+      <p>Stop doing manually what a system can do automatically. We identify bottlenecks in your workflows and build targeted automation that saves time and reduces errors.</p>
+    </div>
+
+    <div class="pp-split pp-split--auto">
+
+      <div class="pp-panel">
+        <h3>What we automate</h3>
+        <div class="pp-pills">
+          <span class="pp-pill"><i class="bi bi-arrow-repeat"></i>Workflow automation</span>
+          <span class="pp-pill"><i class="bi bi-database"></i>Data management</span>
+          <span class="pp-pill"><i class="bi bi-ui-checks"></i>Digital forms</span>
+          <span class="pp-pill"><i class="bi bi-bell"></i>Notifications</span>
+          <span class="pp-pill"><i class="bi bi-bar-chart"></i>Business dashboards</span>
+          <span class="pp-pill"><i class="bi bi-file-earmark-bar-graph"></i>Reporting automation</span>
+          <span class="pp-pill"><i class="bi bi-people"></i>Customer management</span>
+          <span class="pp-pill"><i class="bi bi-plug"></i>API integrations</span>
+          <span class="pp-pill"><i class="bi bi-whatsapp"></i>WhatsApp automation</span>
+          <span class="pp-pill"><i class="bi bi-credit-card"></i>Payment integrations</span>
+        </div>
+        <p class="pp-panel-foot">
+          <i class="bi bi-info-circle me-1"></i>Final price depends on workflow complexity and integrations required.
+        </p>
+      </div>
+
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-lightning-charge"></i></div>
+        <h3 class="pp-name">Business Automation</h3>
+        <p class="pp-desc">Targeted automation solutions designed around your specific business workflows and bottlenecks.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>30,000</span>
+          <span class="pp-price-note">Price varies by workflow &amp; integrations</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Workflow analysis &amp; design</li>
+          <li><i class="bi bi-check-circle-fill"></i>Custom automation development</li>
+          <li><i class="bi bi-check-circle-fill"></i>Integration with existing systems</li>
+          <li><i class="bi bi-check-circle-fill"></i>Testing &amp; refinement</li>
+          <li><i class="bi bi-check-circle-fill"></i>Training &amp; documentation</li>
+          <li><i class="bi bi-check-circle-fill"></i>Post-launch support</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20automate%20part%20of%20my%20business"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--primary">
+            <i class="bi bi-whatsapp"></i> Automate my business
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONSULTANCY ===================== -->
+<section class="pp-section pp-bg-mist pp-category" id="cat-consultancy" role="tabpanel" aria-labelledby="tab-consultancy" hidden>
+  <div class="container">
+
+    <div class="pp-head">
+      <h2>Technology &amp; IT consultancy</h2>
+      <p>Sometimes you need an expert to help you think through a technology decision before you invest. We help you plan right from the start.</p>
+    </div>
+
+    <div class="pp-split pp-split--even">
+
+      <article class="pp-card">
+        <div class="pp-icon"><i class="bi bi-lightbulb"></i></div>
+        <h3 class="pp-name">Technology &amp; IT Consultancy</h3>
+        <p class="pp-desc">Expert guidance to help you make the right technology decisions for your business or project.</p>
+        <div class="pp-price">
+          <span class="pp-price-from">Starting from</span>
+          <span class="pp-price-main"><small>KES</small>5,000</span>
+          <span class="pp-price-note">Per session — varies by engagement type</span>
+        </div>
+        <ul class="pp-features">
+          <li><i class="bi bi-check-circle-fill"></i>Technology consultation</li>
+          <li><i class="bi bi-check-circle-fill"></i>System requirements analysis</li>
+          <li><i class="bi bi-check-circle-fill"></i>Software planning</li>
+          <li><i class="bi bi-check-circle-fill"></i>Project planning</li>
+          <li><i class="bi bi-check-circle-fill"></i>Digital transformation advice</li>
+          <li><i class="bi bi-check-circle-fill"></i>Technology assessment</li>
+          <li><i class="bi bi-check-circle-fill"></i>Software architecture guidance</li>
+          <li><i class="bi bi-check-circle-fill"></i>Technical documentation</li>
+        </ul>
+        <div class="pp-cta">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--primary">
+            <i class="bi bi-calendar-check"></i> Book consultation
+          </a>
+        </div>
+      </article>
+
+      <div class="pp-panel d-flex flex-column justify-content-center">
+        <h3>Why consult before you build?</h3>
+        <div class="pp-reasons">
+          <div class="pp-reason">
+            <i class="bi bi-shield-check"></i>
+            <div>
+              <strong>Avoid costly mistakes</strong>
+              <span>The right technology decision upfront saves you from expensive rebuilds later.</span>
+            </div>
+          </div>
+          <div class="pp-reason">
+            <i class="bi bi-map"></i>
+            <div>
+              <strong>Clear project roadmap</strong>
+              <span>Walk away with a defined scope, realistic timeline and a budget estimate.</span>
+            </div>
+          </div>
+          <div class="pp-reason">
+            <i class="bi bi-puzzle"></i>
+            <div>
+              <strong>Right-fit technology</strong>
+              <span>We recommend what genuinely fits your business — not the most expensive option.</span>
+            </div>
+          </div>
+          <div class="pp-reason">
+            <i class="bi bi-cash-coin"></i>
+            <div>
+              <strong>Budget-informed decisions</strong>
+              <span>Understand the investment required before committing to a full project.</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20book%20a%20technology%20consultation"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--wa">
+            <i class="bi bi-whatsapp"></i> Talk to an expert
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</div><!-- /#pp-panels -->
+
+<!-- ===================== CUSTOM PROJECT ===================== -->
+<section class="pp-section pp-bg-paper pp-custom" style="border-block:1px solid var(--pp-line);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2>Don't see exactly what you need?</h2>
+        <p class="pp-lead">Tell us what you're trying to achieve. We'll help you design the right solution.</p>
+        <p>
+          Not every project fits into a package. For custom software, mobile platforms, integrations,
+          ERP/CRM systems, marketplaces and other complex projects, we first understand your requirements
+          before preparing a detailed proposal.
+        </p>
+        <div class="pp-custom-actions">
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--primary">
+            <i class="bi bi-calendar-check"></i> Book free consultation
+          </a>
+          <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20custom%20project"
+             target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--wa">
+            <i class="bi bi-whatsapp"></i> Talk to us on WhatsApp
+          </a>
+          <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--outline">
+            <i class="bi bi-file-earmark-text"></i> Request a quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ADD-ONS ===================== -->
+<section class="pp-section pp-bg-mist">
+  <div class="container">
+    <div class="pp-head">
+      <h2>Need more?</h2>
+      <p>Extend any package with optional services. All add-on prices are starting prices and may vary based on complexity.</p>
+    </div>
+
+    <div class="pp-addons">
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-phone"></i>M-Pesa integration</span>
+        <span class="pp-addon-price">From KES 15,000</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-file-plus"></i>Additional website pages</span>
+        <span class="pp-addon-price">From KES 2,500/page</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-tools"></i>Website maintenance</span>
+        <span class="pp-addon-price">From KES 5,000/month</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-search"></i>SEO optimization</span>
+        <span class="pp-addon-price">From KES 5,000</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-envelope-at"></i>Business email setup</span>
+        <span class="pp-addon-price">From KES 2,500</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-cloud-upload"></i>Hosting &amp; domain</span>
+        <span class="pp-addon-price">Quoted per requirement</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-plug"></i>Custom API integration</span>
+        <span class="pp-addon-price">From KES 10,000</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-speedometer2"></i>Advanced dashboard</span>
+        <span class="pp-addon-price">From KES 20,000</span>
+      </div>
+      <div class="pp-addon">
+        <span class="pp-addon-name"><i class="bi bi-whatsapp"></i>WhatsApp automation</span>
+        <span class="pp-addon-price">From KES 8,000</span>
+      </div>
+    </div>
+
+    <p class="pp-fineprint">
+      <i class="bi bi-info-circle me-1"></i>All add-on prices are starting prices. Final cost depends on scope and complexity.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="pp-section pp-bg-paper">
+  <div class="container">
+    <div class="pp-head">
+      <h2>How we work with you</h2>
+      <p>A clear, transparent process — from first conversation to launch and beyond.</p>
+    </div>
+
+    <div class="pp-process-wrap">
+      <ol class="pp-process">
+        <li>
+          <h3><i class="bi bi-chat-square-text"></i>Discover</h3>
+          <p>We understand your business, your goals and the specific problem you're trying to solve.</p>
+        </li>
+        <li>
+          <h3><i class="bi bi-clipboard-check"></i>Plan</h3>
+          <p>We define requirements, features, scope, timeline and a clear project proposal.</p>
+        </li>
+        <li>
+          <h3><i class="bi bi-palette"></i>Design</h3>
+          <p>We create the user experience, interface and system structure before writing code.</p>
+        </li>
+        <li>
+          <h3><i class="bi bi-code-slash"></i>Build</h3>
+          <p>Our team develops, tests and refines the solution — keeping you updated throughout.</p>
+        </li>
+        <li>
+          <h3><i class="bi bi-rocket-takeoff"></i>Launch &amp; support</h3>
+          <p>We deploy the solution, provide training and continue supporting you after go-live.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PAYMENT TERMS ===================== -->
+<section class="pp-section pp-bg-mist">
+  <div class="container">
+    <div class="pp-head">
+      <h2>Flexible project payments</h2>
+      <p>We structure payments to match the project size and protect both parties throughout.</p>
+    </div>
+
+    <div class="pp-split pp-split--even">
+
+      <div class="pp-panel">
+        <h3><i class="bi bi-arrow-right-circle me-2"></i>Standard projects</h3>
+        <ol class="pp-pay-steps">
+          <li><i class="bi bi-cash-stack"></i>Deposit to begin<b>50%</b></li>
+          <li><i class="bi bi-code-slash"></i>Development</li>
+          <li><i class="bi bi-check2-square"></i>Testing &amp; approval</li>
+          <li><i class="bi bi-cash-stack"></i>Final payment<b>50%</b></li>
+          <li class="is-final"><i class="bi bi-rocket-takeoff"></i>Launch</li>
+        </ol>
+        <p class="pp-split-note">Pay half to begin, review the finished work, then pay the balance before launch.</p>
+      </div>
+
+      <div class="pp-panel">
+        <h3><i class="bi bi-bar-chart-steps me-2"></i>Larger projects — milestone payments</h3>
+        <div class="pp-bar" role="img" aria-label="Payment split: 30%, 30%, 30%, 10%">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <ol class="pp-pay-steps">
+          <li>Project initiation<b>30%</b></li>
+          <li>Development milestone<b>30%</b></li>
+          <li>Testing &amp; UAT<b>30%</b></li>
+          <li class="is-final">Deployment<b>10%</b></li>
+        </ol>
+        <p class="pp-split-note">Milestone payments tied to deliverables keep large projects on track with clear checkpoints.</p>
+      </div>
+
+    </div>
+
+    <p class="pp-fineprint">
+      <i class="bi bi-file-earmark-check me-1"></i>Exact payment terms are confirmed in the project proposal and agreement before work begins.
+    </p>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="pp-section pp-bg-paper">
+  <div class="container">
+    <div class="pp-final">
+      <h2>Ready to turn your business challenge into a digital solution?</h2>
+      <p class="pp-final-lead">Affordable enough for SMEs. Professional enough for serious businesses. Flexible enough for custom projects.</p>
+      <p class="pp-final-tag">Turning Business Challenges Into Digital Solutions.</p>
+      <div class="pp-final-actions">
+        <a href="https://wa.me/254702502952?text=Hi%2C%20I%27d%20like%20to%20discuss%20a%20project%20with%20OnpointSoft"
+           target="_blank" rel="noopener noreferrer" class="pp-btn pp-btn--light">
+          <i class="bi bi-whatsapp text-success"></i> WhatsApp us
+        </a>
+        <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--accent">
+          <i class="bi bi-calendar-check"></i> Book a consultation
+        </a>
+        <a href="{% url 'contact_us' %}" class="pp-btn pp-btn--ghost">
+          <i class="bi bi-file-earmark-text"></i> Request a quote
+        </a>
+      </div>
+      <div class="pp-final-contact">
+        <a href="tel:+254702502952"><i class="bi bi-telephone-fill"></i>+254 702 502 952</a>
+        <a href="mailto:onpointsoftsolutions@gmail.com"><i class="bi bi-envelope-fill"></i>onpointsoftsolutions@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.pricing-page -->
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+(function () {
+  'use strict';
+
+  var tabs   = Array.prototype.slice.call(document.querySelectorAll('.pp-tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.pp-category'));
+  var bar    = document.getElementById('pricingTabs');
+  var wrap   = document.getElementById('pp-panels');
+
+  function scrollToPanelsIfNeeded() {
+    if (!bar || !wrap) return;
+    var headerOffset = parseInt(
+      getComputedStyle(document.querySelector('.pricing-page')).getPropertyValue('--pp-header-offset'), 10
+    ) || 72;
+    var top = wrap.getBoundingClientRect().top + window.pageYOffset - bar.offsetHeight - headerOffset;
+    if (window.pageYOffset > top) {
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  }
+
+  function showCategory(id, opts) {
+    opts = opts || {};
+    var target = document.getElementById('cat-' + id);
+    if (!target) return;
+
+    panels.forEach(function (p) { p.hidden = (p !== target); });
+
+    tabs.forEach(function (t) {
+      var on = t.getAttribute('data-category') === id;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on && opts.focus) t.focus();
+      if (on && t.scrollIntoView) {
+        t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+      }
+    });
+
+    if (window.AOS && AOS.refresh) AOS.refresh();
+    if (opts.scroll) scrollToPanelsIfNeeded();
+
+    if (opts.updateUrl && window.history && history.replaceState) {
+      var url = new URL(window.location.href);
+      url.searchParams.set('tab', id);
+      history.replaceState(null, '', url.toString());
+    }
+  }
+
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      showCategory(t.getAttribute('data-category'), { updateUrl: true, scroll: true });
+    });
+    t.addEventListener('keydown', function (e) {
+      var next = null;
+      if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft')  next = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home')       next = tabs[0];
+      if (e.key === 'End')        next = tabs[tabs.length - 1];
+      if (next) {
+        e.preventDefault();
+        showCategory(next.getAttribute('data-category'), { updateUrl: true, focus: true });
+      }
+    });
+  });
+
+  // Back-compat for any old inline onclick="showCategory(...)" elsewhere
+  window.showCategory = function (id) { showCategory(id, { updateUrl: true, scroll: true }); };
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var tab = new URLSearchParams(window.location.search).get('tab');
+    if (tab) showCategory(tab, {});
+
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+      if (link.getAttribute('href') === window.location.pathname) link.classList.add('active');
+    });
+  });
+}());
+</script>
+{% endblock %}

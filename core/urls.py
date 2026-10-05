@@ -39,6 +39,7 @@ urlpatterns = [
     # Authentication
     path('accounts/signup/', views.signup, name='signup'),
     path('mobile-development/', views.mobile_development, name='mobile_development'),
+    path('services/', views.services_pricing, name='services_pricing'),
     path('custom-software-development/', views.custom_software_development, name='custom_software_development'),
     path('web-development/', views.web_development, name='web_development'),
     path('github-readme/', views.github_readme, name='github_readme'),

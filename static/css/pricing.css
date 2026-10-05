@@ -1,0 +1,882 @@
+/* =============================================================
+   pricing.css — OnpointSoft Services & Pricing Page
+   Scoped under .pricing-page  (data-bs-theme="light" wrapper)
+   All colours use brand tokens where possible.
+   ============================================================= */
+
+/* -------------------------------------------------------
+   TOKENS
+------------------------------------------------------- */
+.pricing-page {
+  --pp-primary:      #1e3a8a;
+  --pp-primary-lt:   #3b82f6;
+  --pp-accent:       #FF6B35;
+  --pp-accent-dk:    #e8561f;
+  --pp-success:      #10b981;
+  --pp-white:        #ffffff;
+  --pp-mist:         #f9fafb;
+  --pp-paper:        #f3f4f6;
+  --pp-line:         #e5e7eb;
+  --pp-text:         #111827;
+  --pp-muted:        #6b7280;
+  --pp-card-shadow:  0 2px 12px rgba(30,58,138,.08);
+  --pp-card-hover:   0 14px 36px rgba(30,58,138,.14);
+  --pp-radius:       14px;
+  --pp-radius-sm:    8px;
+  --pp-header-offset: 72px;
+
+  background: var(--pp-white);
+  color: var(--pp-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------
+   RESETS (keep Bootstrap intact outside .pricing-page)
+------------------------------------------------------- */
+.pricing-page *,
+.pricing-page *::before,
+.pricing-page *::after {
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------
+   SECTION SCAFFOLDING
+------------------------------------------------------- */
+.pp-section {
+  padding: 4.5rem 0;
+}
+.pp-section--tight {
+  padding: 1.5rem 0;
+}
+
+.pp-bg-mist  { background: var(--pp-mist); }
+.pp-bg-paper { background: var(--pp-paper); }
+
+.pp-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.pp-head h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--pp-text);
+  margin: 0 0 .75rem;
+}
+.pp-head p {
+  color: var(--pp-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: .95rem;
+}
+
+/* -------------------------------------------------------
+   HERO
+------------------------------------------------------- */
+.pp-hero {
+  background: linear-gradient(135deg, var(--pp-primary) 0%, var(--pp-primary-lt) 100%);
+  color: var(--pp-white);
+  padding: 5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+.pp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.pp-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0; right: 0;
+  height: 56px;
+  background: var(--pp-paper);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+.pp-hero .col-lg-8 {
+  position: relative;
+  z-index: 1;
+}
+.pp-hero h1 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  margin: 0 0 1rem;
+  line-height: 1.15;
+}
+.pp-hero-lead {
+  font-size: 1.1rem;
+  opacity: .9;
+  margin: 0 0 .75rem;
+}
+.pp-hero-note {
+  font-size: .82rem;
+  opacity: .72;
+  margin: 0 0 2rem;
+}
+.pp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+}
+
+/* -------------------------------------------------------
+   TRUST STRIP
+------------------------------------------------------- */
+.pp-trust { background: var(--pp-white); border-bottom: 1px solid var(--pp-line); }
+.pp-trust-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: rgba(30,58,138,.04);
+  border: 1.5px solid rgba(30,58,138,.1);
+  border-radius: var(--pp-radius);
+}
+.pp-trust-copy strong {
+  display: block;
+  font-weight: 700;
+  color: var(--pp-primary);
+  margin-bottom: .25rem;
+}
+.pp-trust-copy span {
+  font-size: .85rem;
+  color: var(--pp-muted);
+}
+.pp-trust-list {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1.25rem;
+}
+.pp-trust-list li {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--pp-muted);
+}
+.pp-trust-list li i { color: var(--pp-success); }
+
+/* -------------------------------------------------------
+   STICKY TAB BAR
+------------------------------------------------------- */
+.pp-tabs-bar {
+  position: sticky;
+  top: var(--pp-header-offset);
+  z-index: 900;
+  background: var(--pp-white);
+  border-bottom: 1px solid var(--pp-line);
+  padding: .75rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.pp-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  justify-content: center;
+  padding: .3rem;
+  background: var(--pp-mist);
+  border: 1px solid var(--pp-line);
+  border-radius: 12px;
+  width: fit-content;
+  margin: 0 auto;
+}
+.pp-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: transparent;
+  border: none;
+  color: var(--pp-muted);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: .83rem;
+  padding: .5rem 1.1rem;
+  border-radius: 9px;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: .2px;
+  transition: all .2s ease;
+}
+.pp-tab:hover { color: var(--pp-primary); background: rgba(30,58,138,.06); }
+.pp-tab.is-active {
+  background: var(--pp-primary);
+  color: var(--pp-white);
+  box-shadow: 0 4px 10px rgba(30,58,138,.28);
+}
+
+/* -------------------------------------------------------
+   CARD GRID
+------------------------------------------------------- */
+.pp-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  align-items: start;
+}
+
+/* -------------------------------------------------------
+   PRICING CARD
+------------------------------------------------------- */
+.pp-card {
+  background: var(--pp-white);
+  border: 2px solid var(--pp-line);
+  border-radius: var(--pp-radius);
+  padding: 1.75rem 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: var(--pp-card-shadow);
+}
+.pp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--pp-card-hover);
+  border-color: var(--pp-primary);
+}
+.pp-card--featured {
+  border-color: var(--pp-primary);
+  box-shadow: 0 8px 28px rgba(30,58,138,.18);
+  transform: translateY(-4px);
+}
+.pp-card--featured:hover {
+  transform: translateY(-10px);
+}
+.pp-card--quote {
+  border-style: dashed;
+  border-color: #d1d5db;
+  background: var(--pp-mist);
+}
+.pp-card--quote:hover {
+  border-style: solid;
+  border-color: var(--pp-accent);
+  box-shadow: 0 14px 36px rgba(255,107,53,.12);
+}
+
+/* Badge */
+.pp-badge {
+  position: absolute;
+  top: -1px; right: 1.25rem;
+  background: var(--pp-accent);
+  color: var(--pp-white);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: .28rem .8rem;
+  border-radius: 0 0 7px 7px;
+  box-shadow: 0 4px 10px rgba(255,107,53,.35);
+}
+
+/* Icon */
+.pp-icon {
+  width: 50px; height: 50px;
+  border-radius: 13px;
+  background: rgba(30,58,138,.08);
+  color: var(--pp-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  margin-bottom: .9rem;
+  transition: background .25s, color .25s;
+  flex-shrink: 0;
+}
+.pp-card:hover .pp-icon,
+.pp-card--featured .pp-icon { background: var(--pp-primary); color: var(--pp-white); }
+.pp-card--quote .pp-icon { background: rgba(255,107,53,.1); color: var(--pp-accent); }
+
+/* Name */
+.pp-name {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--pp-text);
+  margin: 0 0 .3rem;
+}
+
+/* Description */
+.pp-desc {
+  font-size: .84rem;
+  color: var(--pp-muted);
+  margin: 0 0 1.1rem;
+  line-height: 1.55;
+}
+
+/* Price block */
+.pp-price {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .3rem;
+}
+.pp-price-from {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--pp-muted);
+}
+.pp-price-main {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--pp-primary);
+  line-height: 1.1;
+}
+.pp-price-main small {
+  font-size: 1rem;
+  font-weight: 600;
+  vertical-align: top;
+  margin-top: .25rem;
+  display: inline-block;
+}
+.pp-card--quote .pp-price-main { color: var(--pp-accent); font-size: 1.4rem; }
+.pp-price-note {
+  font-size: .75rem;
+  color: var(--pp-muted);
+  margin-top: .15rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Divider */
+.pp-card hr {
+  border: none;
+  border-top: 1px solid var(--pp-line);
+  margin: 1.1rem 0;
+}
+
+/* Feature list */
+.pp-features {
+  list-style: none;
+  padding: 0; margin: 0 0 1.4rem;
+  flex: 1;
+}
+.pp-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-size: .84rem;
+  color: var(--pp-text);
+  padding: .28rem 0;
+  line-height: 1.4;
+}
+.pp-features li i {
+  color: var(--pp-success);
+  font-size: .88rem;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+/* CTA */
+.pp-cta { margin-top: auto; }
+
+/* Card note */
+.pp-card-note {
+  font-size: .79rem;
+  color: var(--pp-muted);
+  background: var(--pp-mist);
+  border-left: 3px solid var(--pp-primary);
+  padding: .6rem .9rem;
+  border-radius: 0 7px 7px 0;
+  margin-top: .75rem;
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------
+   BUTTONS
+------------------------------------------------------- */
+.pp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: .875rem;
+  font-weight: 600;
+  padding: .65rem 1.35rem;
+  border-radius: var(--pp-radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: .2px;
+  transition: all .22s ease;
+  white-space: nowrap;
+}
+.pp-btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+/* Variants */
+.pp-btn--primary {
+  background: var(--pp-primary);
+  color: var(--pp-white);
+  border-color: var(--pp-primary);
+}
+.pp-btn--primary:hover {
+  background: #1e40af;
+  border-color: #1e40af;
+  color: var(--pp-white);
+  box-shadow: 0 6px 18px rgba(30,58,138,.3);
+}
+.pp-btn--accent {
+  background: var(--pp-accent);
+  color: var(--pp-white);
+  border-color: var(--pp-accent);
+}
+.pp-btn--accent:hover {
+  background: var(--pp-accent-dk);
+  border-color: var(--pp-accent-dk);
+  color: var(--pp-white);
+  box-shadow: 0 6px 18px rgba(255,107,53,.35);
+}
+.pp-btn--outline {
+  background: transparent;
+  color: var(--pp-primary);
+  border-color: var(--pp-primary);
+}
+.pp-btn--outline:hover {
+  background: var(--pp-primary);
+  color: var(--pp-white);
+}
+.pp-btn--ghost {
+  background: transparent;
+  color: var(--pp-primary);
+  border-color: var(--pp-line);
+}
+.pp-btn--ghost:hover {
+  border-color: var(--pp-primary);
+  color: var(--pp-primary);
+}
+.pp-btn--light {
+  background: var(--pp-white);
+  color: var(--pp-primary);
+  border-color: var(--pp-white);
+}
+.pp-btn--light:hover {
+  background: #f0f4ff;
+  color: var(--pp-primary);
+  box-shadow: 0 4px 14px rgba(0,0,0,.12);
+}
+.pp-btn--wa {
+  background: #25D366;
+  color: var(--pp-white);
+  border-color: #25D366;
+}
+.pp-btn--wa:hover {
+  background: #1ebe5d;
+  border-color: #1ebe5d;
+  color: var(--pp-white);
+  box-shadow: 0 6px 18px rgba(37,211,102,.35);
+}
+
+/* Width helpers */
+.pp-cta .pp-btn { width: 100%; justify-content: center; }
+
+/* -------------------------------------------------------
+   SPLIT LAYOUT (automation / consultancy / payments)
+------------------------------------------------------- */
+.pp-split {
+  display: grid;
+  gap: 1.75rem;
+}
+.pp-split--even  { grid-template-columns: repeat(auto-fit, minmax(min(100%,340px),1fr)); }
+.pp-split--auto  { grid-template-columns: repeat(auto-fit, minmax(min(100%,320px),1fr)); }
+
+/* Panel (non-card info block) */
+.pp-panel {
+  background: var(--pp-white);
+  border: 2px solid var(--pp-line);
+  border-radius: var(--pp-radius);
+  padding: 2rem;
+  box-shadow: var(--pp-card-shadow);
+}
+.pp-panel h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--pp-primary);
+  margin: 0 0 1.25rem;
+}
+.pp-panel-foot {
+  font-size: .8rem;
+  color: var(--pp-muted);
+  margin: 0;
+}
+
+/* -------------------------------------------------------
+   AUTOMATION PILLS
+------------------------------------------------------- */
+.pp-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+}
+.pp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: rgba(30,58,138,.07);
+  border: 1px solid rgba(30,58,138,.12);
+  color: var(--pp-primary);
+  font-size: .82rem;
+  font-weight: 500;
+  padding: .38rem .85rem;
+  border-radius: 50px;
+  transition: all .2s ease;
+  cursor: default;
+}
+.pp-pill:hover {
+  background: var(--pp-primary);
+  color: var(--pp-white);
+  border-color: var(--pp-primary);
+}
+
+/* -------------------------------------------------------
+   CONSULTANCY REASONS
+------------------------------------------------------- */
+.pp-reasons { display: flex; flex-direction: column; gap: 1.1rem; margin-bottom: 1.5rem; }
+.pp-reason {
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+}
+.pp-reason > i {
+  color: var(--pp-primary);
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+.pp-reason strong { display: block; font-size: .88rem; font-weight: 700; color: var(--pp-text); }
+.pp-reason span   { font-size: .82rem; color: var(--pp-muted); }
+
+/* -------------------------------------------------------
+   CUSTOM PROJECT CTA
+------------------------------------------------------- */
+.pp-custom { text-align: center; }
+.pp-custom h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  color: var(--pp-text);
+  margin: 0 0 .75rem;
+}
+.pp-lead {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--pp-text);
+  margin: 0 0 .75rem;
+}
+.pp-custom p { color: var(--pp-muted); margin: 0 0 1.75rem; max-width: 620px; margin-inline: auto; }
+.pp-custom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+}
+
+/* -------------------------------------------------------
+   ADD-ONS GRID
+------------------------------------------------------- */
+.pp-addons {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%,280px),1fr));
+  margin-bottom: 1rem;
+}
+.pp-addon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--pp-white);
+  border: 1.5px solid var(--pp-line);
+  border-radius: var(--pp-radius-sm);
+  padding: 1rem 1.25rem;
+  transition: all .22s ease;
+}
+.pp-addon:hover {
+  border-color: var(--pp-primary);
+  box-shadow: 0 4px 14px rgba(30,58,138,.1);
+  transform: translateY(-2px);
+}
+.pp-addon-name {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--pp-text);
+}
+.pp-addon-name i { color: var(--pp-primary); font-size: 1.05rem; }
+.pp-addon-price {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .88rem;
+  color: var(--pp-primary);
+  white-space: nowrap;
+  background: rgba(30,58,138,.07);
+  padding: .22rem .75rem;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+.pp-fineprint {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--pp-muted);
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* -------------------------------------------------------
+   PROCESS
+------------------------------------------------------- */
+.pp-process-wrap { overflow-x: auto; }
+.pp-process {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%,180px),1fr));
+  list-style: none;
+  padding: 0; margin: 0;
+  counter-reset: step;
+}
+.pp-process li {
+  counter-increment: step;
+  background: var(--pp-white);
+  border: 2px solid var(--pp-line);
+  border-radius: var(--pp-radius);
+  padding: 1.5rem 1.25rem;
+  position: relative;
+  transition: all .25s ease;
+}
+.pp-process li:hover {
+  border-color: var(--pp-primary);
+  box-shadow: 0 8px 22px rgba(30,58,138,.1);
+  transform: translateY(-4px);
+}
+.pp-process li::before {
+  content: "0" counter(step);
+  display: block;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: rgba(30,58,138,.1);
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+.pp-process li h3 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--pp-primary);
+  margin: 0 0 .4rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.pp-process li p {
+  font-size: .83rem;
+  color: var(--pp-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* -------------------------------------------------------
+   PAYMENT TERMS
+------------------------------------------------------- */
+.pp-split-note {
+  font-size: .8rem;
+  color: var(--pp-muted);
+  margin: .5rem 0 0;
+}
+.pp-pay-steps {
+  list-style: none;
+  padding: 0; margin: 0 0 .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.pp-pay-steps li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  background: var(--pp-mist);
+  border: 1.5px solid var(--pp-line);
+  border-radius: var(--pp-radius-sm);
+  padding: .55rem 1rem;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--pp-text);
+}
+.pp-pay-steps li i { color: var(--pp-primary); margin-right: .4rem; flex-shrink: 0; }
+.pp-pay-steps li b {
+  font-weight: 800;
+  color: var(--pp-primary);
+  margin-left: auto;
+  font-family: 'Montserrat', system-ui, sans-serif;
+}
+.pp-pay-steps li.is-final {
+  border-color: var(--pp-primary);
+  color: var(--pp-primary);
+  font-weight: 700;
+}
+.pp-pay-steps li.is-final b { color: var(--pp-accent); }
+
+/* Progress bar (larger projects) */
+.pp-bar {
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr 1fr;
+  height: 10px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  gap: 2px;
+}
+.pp-bar span:nth-child(1) { background: var(--pp-primary); }
+.pp-bar span:nth-child(2) { background: #3b82f6; }
+.pp-bar span:nth-child(3) { background: #60a5fa; }
+.pp-bar span:nth-child(4) { background: var(--pp-accent); }
+
+/* -------------------------------------------------------
+   FINAL CTA BLOCK
+------------------------------------------------------- */
+.pp-final {
+  background: linear-gradient(135deg, var(--pp-primary) 0%, var(--pp-primary-lt) 100%);
+  border-radius: 18px;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  color: var(--pp-white);
+  position: relative;
+  overflow: hidden;
+}
+.pp-final::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+}
+.pp-final::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -40px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: rgba(255,107,53,.1);
+}
+.pp-final > * { position: relative; z-index: 1; }
+.pp-final h2 {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 .75rem;
+  color: var(--pp-white);
+}
+.pp-final-lead {
+  font-size: 1rem;
+  opacity: .9;
+  margin: 0 0 .4rem;
+}
+.pp-final-tag {
+  font-size: .82rem;
+  opacity: .7;
+  margin: 0 0 2rem;
+}
+.pp-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.pp-final-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  font-size: .84rem;
+  opacity: .8;
+}
+.pp-final-contact a {
+  color: var(--pp-white);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+.pp-final-contact a:hover { opacity: 1; text-decoration: underline; }
+
+/* Final CTA buttons need different sizing */
+.pp-final .pp-btn--light  { color: var(--pp-primary); }
+.pp-final .pp-btn--accent { border-color: var(--pp-accent); }
+.pp-final .pp-btn--ghost  {
+  border-color: rgba(255,255,255,.4);
+  color: var(--pp-white);
+  background: rgba(255,255,255,.12);
+}
+.pp-final .pp-btn--ghost:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.6);
+  color: var(--pp-white);
+}
+
+/* -------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------- */
+@media (max-width: 767px) {
+  .pp-section  { padding: 3rem 0; }
+  .pp-hero     { padding: 4rem 0 5rem; }
+
+  .pp-grid {
+    grid-template-columns: 1fr;
+  }
+  .pp-split--even,
+  .pp-split--auto {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-card { padding: 1.5rem 1.25rem; }
+
+  .pp-tabs {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .pp-tab {
+    flex: 1;
+    justify-content: center;
+    font-size: .75rem;
+    padding: .45rem .4rem;
+  }
+
+  .pp-final { padding: 2.5rem 1.5rem; border-radius: 12px; }
+
+  .pp-bar { grid-template-columns: 3fr 3fr 3fr 1fr; }
+
+  .pp-addons { grid-template-columns: 1fr; }
+
+  .pp-process { grid-template-columns: 1fr 1fr; }
+
+  .pp-trust-inner { flex-direction: column; }
+
+  .pp-addon {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .pp-hero h1 { font-size: 1.6rem; }
+  .pp-hero-actions { flex-direction: column; }
+  .pp-final-actions { flex-direction: column; align-items: center; }
+  .pp-process { grid-template-columns: 1fr; }
+}
